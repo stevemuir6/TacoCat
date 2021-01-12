@@ -1,47 +1,73 @@
-// <!-- I want to write JS code that knows what to do when -->
-document.getElementById("btnDemo2").addEventListener("click",function(){
-    // Step 1: I want to collect the number the user entered
-//     Declare a local variable
-// then set it equal to what the user entered
-let num3 = document.getElementById("input3").value;
+// I write custom JS
+// I want to write a piece of JS code that knows what to do when the button is clicked...Add an evenlistener
+document.getElementById("btnOne").addEventListener("click", function(){
+    //Step 1: I want to collect the number the user entered
+    // Declare a local variable named num1
+    // Then set it equal to whatever the user typed
+    let num1 = document.getElementById("input1").value;
 
-    // Step 2: I want to collect the word the user entered
+    //Step 2: I want to collect the word the user entered
+    let word1 = document.getElementById("input2").value;
 
-    let word2 = document.getElementById("input4").value;
-    
-   
-      //Step 3: I want to print out to the user the number and the word they entered
-       //Use JS to find the output element and then stuff some data into it
-       document.getElementById("output3").innerText = `The number you entered is ${num3}`;
-       document.getElementById("output4").innerText = `The word you entered is ${word2}`;
-// when the button is clicked perform a loop 100 times
-for(let index = 1; index <= 100; index++){
-    // i want to bold all the even numbers
-    // us MODULUS operator (%)
-    // index - 1 var specialValue = 1%2 = 2
-    // index - 2 var specialValue = 2%2 = 0
-    let specialValue = index % 2;
-    let printableNum = -1;
-    if(specialValue != 0){
-        printableNum = `<b>${index}</b> `;
-    }
-    if(specialValue == 0){
-        document.getElementById("output3").innerHTML +=(`<b>${index}</b> `);
-    }
-    else{
+    //Step 3: I want to print out to the user the number and the word they entered
+    //Use JS to find the output element and then stuff some data into it
+    document.getElementById("output1").innerHTML = `The number you entered is <span class="boldy">${num1}</span>`;
+    document.getElementById("output2").innerHTML = `The word you entered is <span class="boldy">${word1}</span>`;
+});
+
+// I write custom JS
+// I want to write a piece of JS code that knows what to do when the button is clicked...Add an evenlistener
+document.getElementById("btnTwo").addEventListener("click", function(){
+    //Step 1: I want to collect the number the user entered
+    // Declare a local variable named num1
+    // Then set it equal to whatever the user typed
+    let num1 = document.getElementById("input3").value;
+
+    //Step 2: I want to collect the word the user entered
+    let word1 = document.getElementById("input4").value;
+
+    //Step 3: I want to print out to the user the number and the word they entered
+    //Use JS to find the output element and then stuff some data into it
+    document.getElementById("output3").innerHTML = `The number you entered is <span class="boldy">${num1}</span>`;
+    document.getElementById("output4").innerHTML = `The word you entered is <span class="boldy">${word1}</span>`;
+});
+
+
+// How to I wire up an event handler for the click event of the btnDemo2 button
+document.getElementById("btnDemo2").addEventListener("click", function(){    
+    for(let loop = 1; loop <= 100; loop++)
+    {  
+        var specialValue = loop % 2;
+               
+        if(specialValue != 0) //if SpecialValue IS NOT 0
+        {
+            var printableNum = `<b>${loop}</b> `;
+        }
+        else 
+        {
+            var printableNum = `${loop} `;
+        }
+
         document.getElementById("output3").innerHTML += printableNum;
     }
-
-    
-
-}
-
 });
- document.getElementById("btnWord").addEventListener("click", function(){
-     let word = document.getElementById("input3").value;
-     for(let index = 0; index < word.length; index++)
-     {
-         character += ${word.substr(index, 1); 
-         document.getElementById("output4").append.newWord.substr(0, newWord.length -1);
-     }
- });
+
+document.getElementById("btnWord").addEventListener("click", function(){
+    //Loop over each of the letters in the word
+    let word = document.getElementById("input3").value; 
+    let newWord = "";
+    for(let loop = 0; loop < word.length; loop++)
+    {
+        //How can I use the loop variable to get a single letter from word
+        newWord += `${word.substr(loop, 1)}-`;        
+    }
+    document.getElementById("output4").append(newWord);
+    document.getElementById("output5").append(newWord.substr(0, newWord.length-1));
+}); 
+
+document.getElementById("btnClear").addEventListener("click", function(){
+    // Clear the word the user entered
+    document.getElementById("input3").value = "";  
+    document.getElementById('output4').innerText = "";
+    document.getElementById('output5').innerText = "";
+});
