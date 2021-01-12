@@ -61,9 +61,13 @@ document.getElementById("btnWord").addEventListener("click", function(){
         //How can I use the loop variable to get a single letter from word
         newWord += `${word.substr(loop, 1)}-`;        
     }
+    {
+    }
+
     document.getElementById("output5").append(newWord);
     document.getElementById("output6").append(newWord.substr(0, newWord.length-1));
 }); 
+  
 
 document.getElementById("btnClear").addEventListener("click", function(){
     // Clear the word the user entered
