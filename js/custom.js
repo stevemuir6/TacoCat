@@ -48,26 +48,26 @@ document.getElementById("btnDemo2").addEventListener("click", function(){
             var printableNum = `${loop} `;
         }
 
-        document.getElementById("output3").innerHTML += printableNum;
+        document.getElementById("outputX").innerHTML += printableNum;
     }
 });
 
 document.getElementById("btnWord").addEventListener("click", function(){
     //Loop over each of the letters in the word
-    let word = document.getElementById("input3").value; 
+    let word = document.getElementById("input5").value; 
     let newWord = "";
     for(let loop = 0; loop < word.length; loop++)
     {
         //How can I use the loop variable to get a single letter from word
         newWord += `${word.substr(loop, 1)}-`;        
     }
-    document.getElementById("output4").append(newWord);
-    document.getElementById("output5").append(newWord.substr(0, newWord.length-1));
+    document.getElementById("output5").append(newWord);
+    document.getElementById("output6").append(newWord.substr(0, newWord.length-1));
 }); 
 
 document.getElementById("btnClear").addEventListener("click", function(){
     // Clear the word the user entered
-    document.getElementById("input3").value = "";  
-    document.getElementById('output4').innerText = "";
+    document.getElementById("input5").value = "";  
     document.getElementById('output5').innerText = "";
+    document.getElementById('output6').innerText = "";
 });
